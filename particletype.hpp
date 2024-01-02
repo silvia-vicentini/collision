@@ -11,7 +11,7 @@ private:
     const int fCharge;
 
 public:
-    // constructors
+    // Constructors
     ParticleType(const char *, const double, const int);
     ParticleType();
 
@@ -20,8 +20,8 @@ public:
     double GetMass() const;
     int GetCharge() const;
     virtual double GetWidth() const;
-    
-    // Print method
+
+    // Printer method
     virtual void Print() const;
 };
 #endif
