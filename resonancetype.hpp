@@ -8,10 +8,14 @@ private:
     const double fWidth;
 
 public:
-    // costruttore
+    // Constructor
     ResonanceType(const char *, const double, const int, const double);
-    double GetWidth() const;
-    void Print() const;
+
+    // Getter method
+    double GetWidth() const override;
+
+    // Printer method
+    void Print() const override;
 };
 
 #endif
