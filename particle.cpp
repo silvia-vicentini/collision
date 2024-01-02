@@ -44,7 +44,7 @@ double Particle::GetMass() const { return fParticleType[fIndex]->GetMass(); };
 int Particle::GetCharge() const { return fParticleType[fIndex]->GetCharge(); };
 int Particle::GetSize() { return fParticleType.size(); }
 
-double Particle::InvMass(Particle &p)
+double Particle::InvMass(Particle &p) const
 {
     double p_sum_norm2 = pow(p.GetPx() + GetPx(), 2) + pow(p.GetPy() + GetPy(), 2) + pow(p.GetPz() + GetPz(), 2);
     return sqrt(pow((Energy() + p.Energy()), 2) - p_sum_norm2);
