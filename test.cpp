@@ -6,8 +6,6 @@
 
 #include <vector>
 
-// va bene la width usata?
-
 TEST_CASE("Testing ParticleType and ResonanceType's methods")
 {
     SUBCASE("ParticleType")
@@ -46,8 +44,8 @@ TEST_CASE("Testing ParticleType and ResonanceType's methods")
 
     SUBCASE("Testing the const methods for ParticleType")
     {
-        const ParticleType particle5("π+", 139.6, +1);
-        CHECK(particle5.GetName() == "π+");
+        const ParticleType particle5("\u03C0+", 139.6, +1);
+        CHECK(particle5.GetName() == "\u03C0+");
         CHECK(particle5.GetMass() == doctest::Approx(139.6));
         CHECK(particle5.GetCharge() == 1);
         particle5.Print();
@@ -55,8 +53,8 @@ TEST_CASE("Testing ParticleType and ResonanceType's methods")
 
     SUBCASE("Testing the const methods for ResonanceType")
     {
-        const ResonanceType particle6("π-", 139.6, -1, 0.3);
-        CHECK(particle6.GetName() == "π-");
+        const ResonanceType particle6("\u03C0-", 139.6, -1, 0.3);
+        CHECK(particle6.GetName() == "\u03C0-");
         CHECK(particle6.GetMass() == doctest::Approx(139.6));
         CHECK(particle6.GetCharge() == -1);
         CHECK(particle6.GetWidth() == 0.3);
@@ -70,13 +68,13 @@ TEST_CASE("Testing Particle's methods")
     Particle::AddParticleType("e", 0.511, -1);
     Particle::AddParticleType("K*", 497.648, 0, 0.6);
     Particle::AddParticleType("p", 938.272, +1);
-    Particle::AddParticleType("π-", 139.6, -1, 0.3);
+    Particle::AddParticleType("\u03C0-", 139.6, -1, 0.3);
 
     // p is expressed in GeV
     Particle particle1("e", 0.4599, 0.44457, 0.36792);
     Particle particle2("K*");
     Particle particle3("p", -938.272);
-    const Particle particle4("π-", 110.284, -115.868, 114.472);
+    const Particle particle4("\u03C0-", 110.284, -115.868, 114.472);
     Particle particle5("p-");
     Particle particle6("p", 798.272);
 
